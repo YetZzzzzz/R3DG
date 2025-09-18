@@ -10,7 +10,7 @@ Figure 1:  Illustration of our R3DG framework. It consists of 3 submodules. The 
 
 The aligned CMU-MOSI and CMU-MOSEI datasets can be downloaded according to [MAG](https://github.com/WasifurRahman/BERT_multimodal_transformer) and [BERT_MulT](https://github.com/WasifurRahman/BERT_multimodal_transformer/blob/master/datasets/download_datasets.sh). 
 
-The unaligned CMU-MOSI and CMU-MOSEI datasets can be downloaded according to [MulT](https://github.com/yaohungt/Multimodal-Transformer/tree/master)
+The unaligned CMU-MOSI and CMU-MOSEI datasets can be downloaded according to [MulT](https://github.com/yaohungt/Multimodal-Transformer/tree/master).
 
 Please put the aligned and unaligned datasets to ./dataset/aligned/ and ./dataset/unaligned/ seperately.
 

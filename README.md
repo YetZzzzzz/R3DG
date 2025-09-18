@@ -8,21 +8,11 @@ Figure 1:  Illustration of our R3DG framework. It consists of 3 submodules. The 
 ### Datasets:
 **Please move the following datasets into directory ./datasets/.**
 
-The CMU-MOSI and CMU-MOSEI datasets can be downloaded according to [MAG](https://github.com/WasifurRahman/BERT_multimodal_transformer) and [MulT](https://github.com/yaohungt/Multimodal-Transformer/tree/master). 
+The aligned CMU-MOSI and CMU-MOSEI datasets can be downloaded according to [MAG](https://github.com/WasifurRahman/BERT_multimodal_transformer) and [BERT_MulT](https://github.com/WasifurRahman/BERT_multimodal_transformer/blob/master/datasets/download_datasets.sh). 
 
-For UR-FUNNY and MUStARD, the dataset can be downloaded according to [HKT](https://github.com/matalvepu/HKT/blob/main/dataset/download.txt) through:
-```
-Download Link of UR-FUNNY:  https://www.dropbox.com/s/5y8q52vj3jklwmm/ur_funny.pkl?dl=1
-Download Link of MUsTARD: https://www.dropbox.com/s/w566pkeo63odcj5/mustard.pkl?dl=1
-```
-Please rename the files as ur_funny.pkl and mustard.pkl, and move them into the directory ./datasets/.
+The unaligned CMU-MOSI and CMU-MOSEI datasets can be downloaded according to [MulT](https://github.com/yaohungt/Multimodal-Transformer/tree/master)
 
-For CHERMA dataset, you can download from [LFMIM](https://github.com/sunjunaimer/LFMIM) through: 
-```
-https://pan.baidu.com/s/10PoJcXMDhRg4fzsq96A7rQ
-Extraction code: CHER
-```
-Please put the files into directory ./datasets/CHERMA0723/.
+Please put the aligned and unaligned datasets to ./dataset/aligned/ and ./dataset/unaligned/ seperately.
 
 ### Prerequisites:
 ```
@@ -35,7 +25,19 @@ Please put the files into directory ./datasets/CHERMA0723/.
 **Note that the torch version can be changed to your cuda version, but please keep the transformers==4.30.2 as some functions will change in later versions**
 
 ### Pretrained model:
-Downlaod the [BERT-base](https://huggingface.co/google-bert/bert-base-uncased/tree/main) , and put into directory ./BERT-EN/.
+Downlaod the [BERT-base](https://huggingface.co/google-bert/bert-base-uncased/tree/main) , and put into directory ./pretrained_models/BERT_EN/.
+
+### Run R3DG
+For MOSI: 
+```
+python3 main_R3DG.py --text_seq_length=50 --audio_seq_length=500 --visual_seq_length=375 --TEXT_DIM=768 --ACOUSTIC_DIM=5 --VISUAL_DIM=20 --alignment=unalign --dataset=mosi --local_as=10 --train_batch_size=64
+python3 main_R3DG.py --text_seq_length=50 --audio_seq_length=50 --visual_seq_length=50 --TEXT_DIM=768 --ACOUSTIC_DIM=74 --VISUAL_DIM=47 --alignment=align --dataset=mosi --local_vs=5 --learning_rate=5e-5
+```
+For MOSEI: 
+```
+python3 main_R3DG.py --text_seq_length=50 --audio_seq_length=50 --visual_seq_length=50 --TEXT_DIM=768 --ACOUSTIC_DIM=74 --VISUAL_DIM=35 --alignment=align --dataset=mosei --learning_rate=2e-5 --layers=4
+python3 main_R3DG.py --text_seq_length=50 --audio_seq_length=500 --visual_seq_length=375 --TEXT_DIM=768 --ACOUSTIC_DIM=74 --VISUAL_DIM=35 --alignment=unalign --dataset=mosei --alpha=0.3 --train_batch_size=64
+```
 
 ### Citation:
 Please cite our paper if you find our work useful for your research:

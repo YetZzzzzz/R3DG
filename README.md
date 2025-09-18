@@ -54,4 +54,8 @@ doi = {10.34133/research.0729},
 }
 ```
 
+### Acknowledgement
+Thanks to  [MIB](https://github.com/TmacMai/Multimodal-Information-Bottleneck) , [MAG](https://github.com/WasifurRahman/BERT_multimodal_transformer),  [MCL](https://github.com/TmacMai/Multimodal-Correlation-Learning), [HKT](https://github.com/matalvepu/HKT), [LFMIM](https://github.com/sunjunaimer/LFMIM) and [LFMIM](https://github.com/sunjunaimer/LFMIM) for their great help to our codes and research. 
+
+
 

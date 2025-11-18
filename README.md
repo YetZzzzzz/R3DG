@@ -14,6 +14,8 @@ The unaligned CMU-MOSI and CMU-MOSEI datasets can be downloaded according to [Mu
 
 Please put the aligned and unaligned datasets to ./dataset/aligned/ and ./dataset/unaligned/ seperately.
 
+CHERMA dataset can be downloaded according to [LFMIM](https://github.com/sunjunaimer/LFMIM), and move it to ./dataset/CHERMA0723/.
+
 ### Prerequisites:
 ```
 * Python 3.8.10
@@ -38,6 +40,11 @@ For MOSEI:
 python3 main_R3DG.py --text_seq_length=50 --audio_seq_length=50 --visual_seq_length=50 --TEXT_DIM=768 --ACOUSTIC_DIM=74 --VISUAL_DIM=35 --alignment=align --dataset=mosei --learning_rate=2e-5 --layers=4
 python3 main_R3DG.py --text_seq_length=50 --audio_seq_length=500 --visual_seq_length=375 --TEXT_DIM=768 --ACOUSTIC_DIM=74 --VISUAL_DIM=35 --alignment=unalign --dataset=mosei --alpha=0.3 --train_batch_size=64
 ```
+For CHERMA:
+```
+python3 R3DG_CHERMA.py --learning_rate=2e-5 --layers=6 --local_as=15 --local_vs=15 --d_l=192 --alpha=0.05 --epoch=20
+```
+
 
 ### Citation:
 Please cite our paper if you find our work useful for your research:
